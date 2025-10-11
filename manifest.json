@@ -1,0 +1,28 @@
+{
+  "name": "Alpine Beats",
+  "short_name": "Alpine Beats",
+  "description": "Create awesome beats with an Alesis SR-16 inspired drum machine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

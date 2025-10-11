@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alpine Beats - Create awesome beats with an Alesis SR-16 inspired drum machine">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Alpine Beats - Drum Machine</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #2a2a2a;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button.playing {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .tempo-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tempo-control label {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .tempo-control input {
+            width: 100px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #444;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #667eea;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #667eea;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .sequencer {
+            margin-bottom: 20px;
+        }
+
+        .track {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .track-label {
+            width: 100px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #4ecdc4;
+            text-transform: uppercase;
+        }
+
+        .steps {
+            display: flex;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .step {
+            flex: 1;
+            aspect-ratio: 1;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.1s;
+            position: relative;
+        }
+
+        .step:hover {
+            border-color: #667eea;
+        }
+
+        .step.active {
+            background: #667eea;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.6);
+        }
+
+        .step.current {
+            border-color: #f5576c;
+            border-width: 3px;
+        }
+
+        .step.current.active {
+            box-shadow: 0 0 15px rgba(245, 87, 108, 0.8);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .track-label {
+                width: 70px;
+                font-size: 0.75em;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .controls {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" x-data="drumMachine()">
+        <h1>🥁 Alpine Beats</h1>
+        <p class="subtitle">Inspired by the legendary Alesis SR-16</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <button @click="togglePlay()" :class="{ 'playing': isPlaying }">
+                    <span x-text="isPlaying ? '⏸ Stop' : '▶ Play'"></span>
+                </button>
+                <button @click="clear()">🗑 Clear</button>
+            </div>
+
+            <div class="tempo-control">
+                <label>Tempo: <span x-text="tempo"></span> BPM</label>
+                <input type="range" min="60" max="200" x-model="tempo" @input="updateTempo()">
+            </div>
+        </div>
+
+        <div class="sequencer">
+            <template x-for="(track, trackIndex) in tracks" :key="trackIndex">
+                <div class="track">
+                    <div class="track-label" x-text="track.name"></div>
+                    <div class="steps">
+                        <template x-for="(step, stepIndex) in track.steps" :key="stepIndex">
+                            <div 
+                                class="step" 
+                                :class="{ 
+                                    'active': step, 
+                                    'current': currentStep === stepIndex 
+                                }"
+                                @click="toggleStep(trackIndex, stepIndex)"
+                                @mouseenter="previewSound(trackIndex)"
+                            ></div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <div class="footer">
+            <p>Click pads to create patterns • Hover to preview sounds • Adjust tempo with slider</p>
+        </div>
+    </div>
+
+    <script defer src="alpine.min.js"></script>
+    <script>
+        function drumMachine() {
+            return {
+                tracks: [
+                    { name: 'Kick', steps: Array(16).fill(false), sound: null },
+                    { name: 'Snare', steps: Array(16).fill(false), sound: null },
+                    { name: 'Closed HH', steps: Array(16).fill(false), sound: null },
+                    { name: 'Open HH', steps: Array(16).fill(false), sound: null },
+                    { name: 'Clap', steps: Array(16).fill(false), sound: null },
+                    { name: 'Rim', steps: Array(16).fill(false), sound: null },
+                    { name: 'Tom Hi', steps: Array(16).fill(false), sound: null },
+                    { name: 'Tom Lo', steps: Array(16).fill(false), sound: null }
+                ],
+                tempo: 120,
+                isPlaying: false,
+                currentStep: -1,
+                intervalId: null,
+                audioContext: null,
+
+                init() {
+                    // Initialize Web Audio API
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Generate drum sounds
+                    this.generateDrumSounds();
+                    
+                    // Set up a simple demo pattern
+                    this.loadDemoPattern();
+
+                    // Register service worker
+                    if ('serviceWorker' in navigator) {
+                        navigator.serviceWorker.register('sw.js').catch(() => {});
+                    }
+                },
+
+                generateDrumSounds() {
+                    // Create simple synthetic drum sounds using Web Audio API
+                    // These are basic approximations of drum sounds
+                    this.tracks[0].sound = () => this.playKick();
+                    this.tracks[1].sound = () => this.playSnare();
+                    this.tracks[2].sound = () => this.playClosedHihat();
+                    this.tracks[3].sound = () => this.playOpenHihat();
+                    this.tracks[4].sound = () => this.playClap();
+                    this.tracks[5].sound = () => this.playRim();
+                    this.tracks[6].sound = () => this.playTomHi();
+                    this.tracks[7].sound = () => this.playTomLo();
+                },
+
+                playKick() {
+                    const now = this.audioContext.currentTime;
+                    const osc = this.audioContext.createOscillator();
+                    const gain = this.audioContext.createGain();
+                    
+                    osc.frequency.setValueAtTime(150, now);
+                    osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.5);
+                    
+                    gain.gain.setValueAtTime(1, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 0.5);
+                },
+
+                playSnare() {
+                    const now = this.audioContext.currentTime;
+                    
+                    // Tone component
+                    const osc = this.audioContext.createOscillator();
+                    const oscGain = this.audioContext.createGain();
+                    osc.frequency.setValueAtTime(200, now);
+                    oscGain.gain.setValueAtTime(0.3, now);
+                    oscGain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                    osc.connect(oscGain);
+                    
+                    // Noise component
+                    const bufferSize = this.audioContext.sampleRate * 0.2;
+                    const buffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+                    const data = buffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) {
+                        data[i] = Math.random() * 2 - 1;
+                    }
+                    
+                    const noise = this.audioContext.createBufferSource();
+                    noise.buffer = buffer;
+                    const noiseGain = this.audioContext.createGain();
+                    noiseGain.gain.setValueAtTime(0.5, now);
+                    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                    noise.connect(noiseGain);
+                    
+                    oscGain.connect(this.audioContext.destination);
+                    noiseGain.connect(this.audioContext.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 0.2);
+                    noise.start(now);
+                },
+
+                playClosedHihat() {
+                    const now = this.audioContext.currentTime;
+                    const bufferSize = this.audioContext.sampleRate * 0.05;
+                    const buffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+                    const data = buffer.getChannelData(0);
+                    
+                    for (let i = 0; i < bufferSize; i++) {
+                        data[i] = Math.random() * 2 - 1;
+                    }
+                    
+                    const noise = this.audioContext.createBufferSource();
+                    noise.buffer = buffer;
+                    
+                    const bandpass = this.audioContext.createBiquadFilter();
+                    bandpass.type = 'bandpass';
+                    bandpass.frequency.value = 10000;
+                    
+                    const gain = this.audioContext.createGain();
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                    
+                    noise.connect(bandpass);
+                    bandpass.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    noise.start(now);
+                },
+
+                playOpenHihat() {
+                    const now = this.audioContext.currentTime;
+                    const bufferSize = this.audioContext.sampleRate * 0.3;
+                    const buffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+                    const data = buffer.getChannelData(0);
+                    
+                    for (let i = 0; i < bufferSize; i++) {
+                        data[i] = Math.random() * 2 - 1;
+                    }
+                    
+                    const noise = this.audioContext.createBufferSource();
+                    noise.buffer = buffer;
+                    
+                    const bandpass = this.audioContext.createBiquadFilter();
+                    bandpass.type = 'bandpass';
+                    bandpass.frequency.value = 8000;
+                    
+                    const gain = this.audioContext.createGain();
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                    
+                    noise.connect(bandpass);
+                    bandpass.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    noise.start(now);
+                },
+
+                playClap() {
+                    const now = this.audioContext.currentTime;
+                    
+                    for (let i = 0; i < 3; i++) {
+                        const time = now + (i * 0.03);
+                        const bufferSize = this.audioContext.sampleRate * 0.05;
+                        const buffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+                        const data = buffer.getChannelData(0);
+                        
+                        for (let j = 0; j < bufferSize; j++) {
+                            data[j] = Math.random() * 2 - 1;
+                        }
+                        
+                        const noise = this.audioContext.createBufferSource();
+                        noise.buffer = buffer;
+                        
+                        const bandpass = this.audioContext.createBiquadFilter();
+                        bandpass.type = 'bandpass';
+                        bandpass.frequency.value = 1500;
+                        
+                        const gain = this.audioContext.createGain();
+                        gain.gain.setValueAtTime(0.3, time);
+                        gain.gain.exponentialRampToValueAtTime(0.01, time + 0.05);
+                        
+                        noise.connect(bandpass);
+                        bandpass.connect(gain);
+                        gain.connect(this.audioContext.destination);
+                        
+                        noise.start(time);
+                    }
+                },
+
+                playRim() {
+                    const now = this.audioContext.currentTime;
+                    const osc = this.audioContext.createOscillator();
+                    const gain = this.audioContext.createGain();
+                    
+                    osc.frequency.setValueAtTime(800, now);
+                    osc.frequency.exponentialRampToValueAtTime(400, now + 0.1);
+                    
+                    gain.gain.setValueAtTime(0.5, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                },
+
+                playTomHi() {
+                    const now = this.audioContext.currentTime;
+                    const osc = this.audioContext.createOscillator();
+                    const gain = this.audioContext.createGain();
+                    
+                    osc.frequency.setValueAtTime(300, now);
+                    osc.frequency.exponentialRampToValueAtTime(100, now + 0.3);
+                    
+                    gain.gain.setValueAtTime(0.6, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                },
+
+                playTomLo() {
+                    const now = this.audioContext.currentTime;
+                    const osc = this.audioContext.createOscillator();
+                    const gain = this.audioContext.createGain();
+                    
+                    osc.frequency.setValueAtTime(180, now);
+                    osc.frequency.exponentialRampToValueAtTime(60, now + 0.4);
+                    
+                    gain.gain.setValueAtTime(0.7, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.audioContext.destination);
+                    
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+                },
+
+                toggleStep(trackIndex, stepIndex) {
+                    this.tracks[trackIndex].steps[stepIndex] = !this.tracks[trackIndex].steps[stepIndex];
+                },
+
+                previewSound(trackIndex) {
+                    if (this.tracks[trackIndex].sound) {
+                        this.tracks[trackIndex].sound();
+                    }
+                },
+
+                togglePlay() {
+                    if (this.isPlaying) {
+                        this.stop();
+                    } else {
+                        this.play();
+                    }
+                },
+
+                play() {
+                    this.isPlaying = true;
+                    this.currentStep = -1;
+                    this.step();
+                },
+
+                stop() {
+                    this.isPlaying = false;
+                    if (this.intervalId) {
+                        clearTimeout(this.intervalId);
+                        this.intervalId = null;
+                    }
+                    this.currentStep = -1;
+                },
+
+                step() {
+                    if (!this.isPlaying) return;
+
+                    this.currentStep = (this.currentStep + 1) % 16;
+
+                    // Play sounds for active steps
+                    this.tracks.forEach(track => {
+                        if (track.steps[this.currentStep] && track.sound) {
+                            track.sound();
+                        }
+                    });
+
+                    // Schedule next step
+                    const stepDuration = (60 / this.tempo) * 1000 / 4; // 16th notes
+                    this.intervalId = setTimeout(() => this.step(), stepDuration);
+                },
+
+                updateTempo() {
+                    // Tempo change will take effect on next step
+                },
+
+                clear() {
+                    this.tracks.forEach(track => {
+                        track.steps = Array(16).fill(false);
+                    });
+                    this.stop();
+                },
+
+                loadDemoPattern() {
+                    // Load a simple demo beat
+                    // Kick on 1, 5, 9, 13
+                    this.tracks[0].steps[0] = true;
+                    this.tracks[0].steps[4] = true;
+                    this.tracks[0].steps[8] = true;
+                    this.tracks[0].steps[12] = true;
+                    
+                    // Snare on 4, 12
+                    this.tracks[1].steps[4] = true;
+                    this.tracks[1].steps[12] = true;
+                    
+                    // Closed hi-hats on every other step
+                    for (let i = 0; i < 16; i += 2) {
+                        this.tracks[2].steps[i] = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
