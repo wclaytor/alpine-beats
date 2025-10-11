@@ -2,6 +2,8 @@
 
 Create awesome beats with an Alesis SR-16 inspired drum machine built with Alpine.js!
 
+[GitHub Pages Live Preview](https://wclaytor.github.io/alpine-beats/index.html)
+
 ## Features
 
 - **16-Step Sequencer**: Classic 16-step pattern programming
