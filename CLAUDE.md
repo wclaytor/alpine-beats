@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions - Alpine Beats Drum Machine
+# Claude Instructions - Alpine Beats Drum Machine
 
 ## 🎯 Project Context and Purpose
 
