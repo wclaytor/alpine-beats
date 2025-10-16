@@ -152,10 +152,38 @@
 
         .track-label {
             width: 100px;
-            font-size: 0.9em;
+            font-size: 0.75em;
             font-weight: bold;
             color: #4ecdc4;
             text-transform: uppercase;
+            background: #1a1a1a;
+            border: 2px solid #4ecdc4;
+            border-radius: 6px;
+            padding: 8px;
+            margin-right: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .track-icon {
+            display: none;
+        }
+
+        .track-name {
+            display: inline;
+        }
+
+        .track-label:hover {
+            background: #4ecdc4;
+            color: #1a1a1a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+        }
+
+        .track-label:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
         }
 
         .steps {
@@ -214,8 +242,17 @@
             }
 
             .track-label {
-                width: 70px;
-                font-size: 0.75em;
+                width: 50px;
+                font-size: 1.2em;
+                padding: 6px;
+            }
+
+            .track-name {
+                display: none;
+            }
+
+            .track-icon {
+                display: inline;
             }
 
             button {
@@ -251,7 +288,10 @@
         <div class="sequencer">
             <template x-for="(track, trackIndex) in tracks" :key="trackIndex">
                 <div class="track">
-                    <div class="track-label" x-text="track.name"></div>
+                    <button class="track-label" @click="previewSound(trackIndex)">
+                        <span class="track-name" x-text="track.name"></span>
+                        <span class="track-icon" x-text="track.icon"></span>
+                    </button>
                     <div class="steps">
                         <template x-for="(step, stepIndex) in track.steps" :key="stepIndex">
                             <div 
@@ -269,7 +309,7 @@
         </div>
 
         <div class="footer">
-            <p>Click pads to create patterns • Adjust tempo with slider</p>
+            <p>Click instrument buttons to preview sounds • Click pads to create patterns • Adjust tempo with slider</p>
         </div>
     </div>
 
@@ -453,14 +493,14 @@
         function drumMachine() {
             return {
                 tracks: [
-                    { name: 'Kick', steps: Array(16).fill(false), sound: null },
-                    { name: 'Snare', steps: Array(16).fill(false), sound: null },
-                    { name: 'Closed HH', steps: Array(16).fill(false), sound: null },
-                    { name: 'Open HH', steps: Array(16).fill(false), sound: null },
-                    { name: 'Clap', steps: Array(16).fill(false), sound: null },
-                    { name: 'Rim', steps: Array(16).fill(false), sound: null },
-                    { name: 'Tom Hi', steps: Array(16).fill(false), sound: null },
-                    { name: 'Tom Lo', steps: Array(16).fill(false), sound: null }
+                    { name: 'Kick', icon: '🦶', steps: Array(16).fill(false), sound: null },
+                    { name: 'Snare', icon: '🥁', steps: Array(16).fill(false), sound: null },
+                    { name: 'Closed HH', icon: '🔒', steps: Array(16).fill(false), sound: null },
+                    { name: 'Open HH', icon: '🔓', steps: Array(16).fill(false), sound: null },
+                    { name: 'Clap', icon: '👏', steps: Array(16).fill(false), sound: null },
+                    { name: 'Rim', icon: '⭕', steps: Array(16).fill(false), sound: null },
+                    { name: 'Tom Hi', icon: '⬆️', steps: Array(16).fill(false), sound: null },
+                    { name: 'Tom Lo', icon: '⬇️', steps: Array(16).fill(false), sound: null }
                 ],
                 tempo: 120,
                 isPlaying: false,
@@ -731,6 +771,13 @@
 
                 updateTempo() {
                     // Tempo change will take effect on next step
+                },
+
+                previewSound(trackIndex) {
+                    // Play the sound for the specified track
+                    if (this.tracks[trackIndex].sound) {
+                        this.tracks[trackIndex].sound();
+                    }
                 },
 
                 clear() {
