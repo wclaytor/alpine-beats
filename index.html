@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Alpine Beats - Create awesome beats with an Alesis SR-16 inspired drum machine">
-    <meta name="theme-color" content="#1a1a1a">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Alpine Beats - Drum Machine</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVFhH7ZbPTxNBFMfn172tWCiUH4qCxEQ9qAcPJiZ68OjBk/+AiQcPnkz0H/Dg1YMHEw8ePXkwMTHxYGJiYmJiYmKiRkWDQAst0JZud3fGd7tdoJRuS5sTfpJJZt68eZ/9znvzJkshCAKCIAiCIAiCIAiCIAiCIP5fNDU1IY/Hw7xeL/P5fMzv9zO/388CgQALBoPM7/czl8vFXC4XczqdzOl0MofDwex2O7Pb7cxms7Hm5mbl75xSCU5OTrJTp04xk8nEbDYbMxqNzGKxMIPBwPR6PdPpdJoGCXa7HUqlUtZqt7PO7m7W3dvLOru62KnOTuxCHR0d7MSJE8xoNOJcKBQKvuaW0okbGxvFp9TQAOE+hRjTWAhRHUKQKuZbcCpV1AhaqVDXh1CpEWKgpwcLkMuAOzs7+TlluuYATlX1XSo2LERJKhVCkPKmcmFLT18fc7lcXMT169fFe2tra7nAw4cPc4Hz589zkefPn2ft7e1cYGdnJ7tw4YKqgKamJnH9u+++Y+fOnVNdFxCJRMTvjxgPvXqVdXUgugkE3n//PR+z2az4/ZUrV1hvby/vA5qamnL/JZUDOiTiHG8YDAZViY2NjXw/Go1qRqalpVUsgZ+rCwCAra2tYgAKhQIvNBYaRK6GlJeXxw/FGzFGVUCj0VB1APxWFAAAyuWyyp2dHZU7OztV7u7uqtzb21O5v7+vcn9//4e6VSIIgnifvwBY6MEw6D7KNQAAAABJRU5ErkJggg==">
+    <!-- Icon as data URL (will be converted to PNG for manifest) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%231a1a1a'/%3E%3Ctext x='96' y='96' text-anchor='middle' dominant-baseline='middle' font-size='120' fill='%234ecdc4'%3E🥁%3C/text%3E%3C/svg%3E" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="">
     <style>
         * {
             box-sizing: border-box;
@@ -167,7 +166,8 @@
 
         .step {
             flex: 1;
-            aspect-ratio: 1;
+            height: 32px;
+            max-width: 32px;
             background: #1a1a1a;
             border: 2px solid #333;
             border-radius: 4px;
@@ -261,7 +261,6 @@
                                     'current': currentStep === stepIndex 
                                 }"
                                 @click="toggleStep(trackIndex, stepIndex)"
-                                @mouseenter="previewSound(trackIndex)"
                             ></div>
                         </template>
                     </div>
@@ -270,12 +269,187 @@
         </div>
 
         <div class="footer">
-            <p>Click pads to create patterns • Hover to preview sounds • Adjust tempo with slider</p>
+            <p>Click pads to create patterns • Adjust tempo with slider</p>
         </div>
     </div>
 
-    <script defer src="alpine.min.js"></script>
+    <!-- Alpine.js from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <script>
+        // PWA Setup - Dynamic manifest and service worker
+        (function() {
+            // Listen for install prompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                console.log('Install prompt available!');
+            });
+
+            const iconSize = 192;
+            
+            // Create the drum icon as SVG
+            const svgIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%231a1a1a'/%3E%3Ctext x='96' y='96' text-anchor='middle' dominant-baseline='middle' font-size='120' fill='%234ecdc4'%3E🥁%3C/text%3E%3C/svg%3E`;
+
+            // Dynamic manifest
+            const manifest = {
+                name: 'Alpine Beats',
+                short_name: 'Alpine Beats',
+                description: 'Create awesome beats with an Alesis SR-16 inspired drum machine',
+                display: 'standalone',
+                theme_color: '#1a1a1a',
+                background_color: '#1a1a1a',
+                start_url: window.location.href,
+                scope: window.location.origin + window.location.pathname
+            };
+
+            // Convert SVG to PNG function
+            function svgToPng(svgDataUrl, size) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = size;
+                        canvas.height = size;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, size, size);
+                        const pngDataUrl = canvas.toDataURL('image/png');
+                        resolve(pngDataUrl);
+                    };
+                    img.onerror = reject;
+                    img.src = svgDataUrl;
+                });
+            }
+
+            // Set icon function
+            function setIcon(query, iconurl, size) {
+                const iconLink = document.querySelector(query);
+                if (iconLink) {
+                    iconLink.href = iconurl;
+                    iconLink.type = 'image/png';
+                    if (size) {
+                        iconLink.setAttribute('sizes', `${size}x${size}`);
+                    }
+                }
+            }
+
+            // Set manifest function
+            function setManifest(manifest) {
+                const link = document.createElement('link');
+                link.rel = 'manifest';
+                const b64manifest = btoa(JSON.stringify(manifest));
+                link.href = "data:application/json;base64," + b64manifest;
+                document.head.appendChild(link);
+            }
+
+            // Create startup image for iOS
+            function createStartupImage(bgColor) {
+                return new Promise((resolve) => {
+                    const dpr = window.devicePixelRatio || 1;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = window.screen.width * dpr;
+                    canvas.height = window.screen.height * dpr;
+                    const ctx = canvas.getContext('2d');
+
+                    ctx.fillStyle = bgColor;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    // Draw drum emoji in center
+                    ctx.font = `${canvas.width * 0.2}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillStyle = '#4ecdc4';
+                    ctx.fillText('🥁', canvas.width / 2, canvas.height / 2);
+
+                    resolve(canvas.toDataURL('image/png'));
+                });
+            }
+
+            // Initialize PWA
+            (async function() {
+                try {
+                    // Convert SVG to PNG
+                    const pngDataUrl = await svgToPng(svgIcon, iconSize);
+
+                    // Set icons
+                    setIcon("link[rel='icon']", pngDataUrl, iconSize);
+                    setIcon("link[rel='apple-touch-icon']", pngDataUrl);
+
+                    // Add icons to manifest
+                    manifest.icons = [
+                        {
+                            src: pngDataUrl,
+                            sizes: `${iconSize}x${iconSize}`,
+                            type: 'image/png',
+                            purpose: 'any maskable'
+                        }
+                    ];
+
+                    // Set manifest
+                    setManifest(manifest);
+
+                    // Create and set iOS startup image
+                    const startupImageDataUrl = await createStartupImage('#1a1a1a');
+                    const startupLink = document.createElement('link');
+                    startupLink.rel = 'apple-touch-startup-image';
+                    startupLink.href = startupImageDataUrl;
+                    document.head.appendChild(startupLink);
+
+                } catch (error) {
+                    console.error('Error setting up PWA:', error);
+                }
+            })();
+
+            // Inline Service Worker
+            const swCode = `
+                const CACHE_NAME = 'alpine-beats-v2';
+                const urlsToCache = [
+                    '/',
+                    'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'
+                ];
+
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                    );
+                });
+
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request)
+                            .then(response => response || fetch(event.request))
+                    );
+                });
+
+                self.addEventListener('activate', event => {
+                    event.waitUntil(
+                        caches.keys().then(cacheNames => {
+                            return Promise.all(
+                                cacheNames
+                                    .filter(cacheName => cacheName !== CACHE_NAME)
+                                    .map(cacheName => caches.delete(cacheName))
+                            );
+                        })
+                    );
+                });
+            `;
+
+            // Register inline service worker
+            if ('serviceWorker' in navigator) {
+                try {
+                    const blob = new Blob([swCode], { type: 'application/javascript' });
+                    const swUrl = URL.createObjectURL(blob);
+                    navigator.serviceWorker.register(swUrl).then(() => {
+                        console.log('Service Worker registered');
+                    }).catch(err => {
+                        console.log('Service Worker registration failed:', err);
+                    });
+                } catch (err) {
+                    console.log('Service Worker setup failed:', err);
+                }
+            }
+        })();
+
+        // Alpine.js Drum Machine Component
         function drumMachine() {
             return {
                 tracks: [
@@ -303,16 +477,10 @@
                     
                     // Set up a simple demo pattern
                     this.loadDemoPattern();
-
-                    // Register service worker
-                    if ('serviceWorker' in navigator) {
-                        navigator.serviceWorker.register('sw.js').catch(() => {});
-                    }
                 },
 
                 generateDrumSounds() {
                     // Create simple synthetic drum sounds using Web Audio API
-                    // These are basic approximations of drum sounds
                     this.tracks[0].sound = () => this.playKick();
                     this.tracks[1].sound = () => this.playSnare();
                     this.tracks[2].sound = () => this.playClosedHihat();
@@ -519,12 +687,6 @@
 
                 toggleStep(trackIndex, stepIndex) {
                     this.tracks[trackIndex].steps[stepIndex] = !this.tracks[trackIndex].steps[stepIndex];
-                },
-
-                previewSound(trackIndex) {
-                    if (this.tracks[trackIndex].sound) {
-                        this.tracks[trackIndex].sound();
-                    }
                 },
 
                 togglePlay() {
