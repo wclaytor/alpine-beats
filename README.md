@@ -18,10 +18,10 @@ Create awesome beats with an Alesis SR-16 inspired drum machine built with Alpin
 ### Quick Start
 
 1. Open `index.html` in a modern web browser
-2. Click on the pads to create your beat pattern
-3. Press the Play button to start the sequencer
-4. Adjust the tempo slider to change the speed
-5. Hover over pads to preview sounds
+2. Click instrument buttons to preview sounds
+3. Click on the pads to create your beat pattern
+4. Press the Play button to start the sequencer
+5. Adjust the tempo slider to change the speed
 
 ### Local Development
 
@@ -45,7 +45,7 @@ Then open `http://localhost:8000` in your browser.
 ### Creating Patterns
 
 - **Click** on any pad to toggle it on/off (active pads are highlighted)
-- **Hover** over track labels to preview drum sounds
+- **Click** instrument buttons to preview drum sounds
 - Active steps will be highlighted when the sequencer reaches them
 - Create complex rhythms by combining different drum sounds
 
@@ -70,8 +70,10 @@ This drum machine takes inspiration from the legendary [Alesis SR-16](https://ww
 
 - **Framework**: Alpine.js 3.x (loaded from CDN)
 - **Audio**: Web Audio API for sound synthesis
-- **PWA**: Service Worker for offline functionality
-- **No Build Step**: Pure HTML, CSS, and JavaScript
+- **Architecture**: True single-page PWA - all code, styles, and PWA assets contained in `index.html`
+- **Service Worker**: Inlined for offline functionality
+- **Manifest**: Dynamically generated and inlined
+- **No Build Step**: Pure HTML, CSS, and JavaScript - no external files required
 
 ## Browser Compatibility
 
