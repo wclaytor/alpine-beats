@@ -1,0 +1,38 @@
+name: Create Issues from Markdown
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: 'Path to markdown file'
+        required: true
+        default: 'docs/features/tickets.md'
+      dry_run:
+        description: 'Dry run (preview only)'
+        type: boolean
+        default: false
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install pyyaml requests
+    
+    - name: Create Issues
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python scripts/create_github_issues.py \
+          "${{ github.event.inputs.file_path }}" \
+          --repo "${{ github.repository }}" \
+          ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
