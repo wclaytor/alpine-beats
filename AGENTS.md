@@ -50,6 +50,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 
 ### 🏗️ Architect Role
 
+[Architect](docs/roles/Architect.md)
+
 **When to Use This Role**: Audio architecture, performance optimization, technical design, system planning
 
 **Focus**: Audio architecture, timing precision, performance optimization
@@ -74,6 +76,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 ---
 
 ### 🎨 Designer Role
+
+[Designer](docs/roles/Designer.md)
 
 **When to Use This Role**: UI/UX design, visual feedback, accessibility, mobile interface
 
@@ -100,6 +104,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 
 ### 💻 Developer Role
 
+[Developer](docs/roles/Developer.md)
+
 **When to Use This Role**: Implementation tasks, coding, Alpine.js patterns, Web Audio API integration
 
 **Focus**: Alpine.js implementation, audio synthesis, sequencer logic
@@ -125,6 +131,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 
 ### 🧪 QA-Engineer Role
 
+[QA-Engineer](docs/roles/QA-Engineer.md)
+
 **When to Use This Role**: Testing, validation, quality assurance, cross-browser compatibility
 
 **Focus**: Audio quality, timing accuracy, cross-browser compatibility
@@ -149,6 +157,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 ---
 
 ## 🔄 Role Collaboration Guidelines
+
+[Role-Collaboration](docs/guides/Roles-Collaboration.md)
 
 ### When Working on Tasks
 
