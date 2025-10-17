@@ -1,6 +1,6 @@
 ---
 epic:
-  title: "Epic: Drum Kit & Sound Library Implementation"
+  title: "Epic: Drum Kit & Sound Library Implementation (PRD-0001)"
   labels: ["epic", "drum-kit-feature"]
   milestone: "Drum Kit Feature"
   description: |
@@ -21,7 +21,7 @@ epic:
 
 ---
 ticket:
-  id: BEAT-001
+  id: PRD-0001-001
   title: Create Sound Synthesis Library
   type: backend
   priority: P0
@@ -32,7 +32,7 @@ ticket:
   dependencies: []
 ---
 
-### BEAT-001: Create Sound Synthesis Library
+### PRD-0001-001: Create Sound Synthesis Library
 
 **Description:**
 Create comprehensive library of drum sound synthesis functions using Web Audio API.
@@ -55,7 +55,7 @@ Create comprehensive library of drum sound synthesis functions using Web Audio A
 
 ---
 ticket:
-  id: BEAT-002
+  id: PRD-0001-002
   title: Define Drum Kit Presets
   type: configuration
   priority: P0
@@ -63,10 +63,10 @@ ticket:
   sprint: 1
   labels: ["configuration", "drum-kit-feature", "P0"]
   assignee: ""
-  dependencies: ["BEAT-001"]
+  dependencies: ["PRD-0001-001"]
 ---
 
-### BEAT-002: Define Drum Kit Presets
+### PRD-0001-002: Define Drum Kit Presets
 
 **Description:**
 Define the sound mappings for each of the 9 drum kit presets.
@@ -98,7 +98,7 @@ Define the sound mappings for each of the 9 drum kit presets.
 
 ---
 ticket:
-  id: BEAT-003
+  id: PRD-0001-003
   title: Implement Data Models
   type: backend
   priority: P0
@@ -106,10 +106,10 @@ ticket:
   sprint: 1
   labels: ["backend", "drum-kit-feature", "P0"]
   assignee: ""
-  dependencies: ["BEAT-002"]
+  dependencies: ["PRD-0001-002"]
 ---
 
-### BEAT-003: Implement Data Models
+### PRD-0001-003: Implement Data Models
 
 **Description:**
 Create data structures and state management for sound library and drum kits.
@@ -128,7 +128,7 @@ Create data structures and state management for sound library and drum kits.
 
 ---
 ticket:
-  id: BEAT-004
+  id: PRD-0001-004
   title: Kit Selector UI Component
   type: frontend
   priority: P0
@@ -136,10 +136,10 @@ ticket:
   sprint: 1
   labels: ["frontend", "ui", "drum-kit-feature", "P0"]
   assignee: ""
-  dependencies: ["BEAT-003"]
+  dependencies: ["PRD-0001-003"]
 ---
 
-### BEAT-004: Kit Selector UI Component
+### PRD-0001-004: Kit Selector UI Component
 
 **Description:**
 Add dropdown/select component for choosing drum kits.
@@ -159,7 +159,7 @@ Add dropdown/select component for choosing drum kits.
 
 ---
 ticket:
-  id: BEAT-005
+  id: PRD-0001-005
   title: Kit Loading Functionality
   type: frontend
   priority: P0
@@ -167,10 +167,10 @@ ticket:
   sprint: 1
   labels: ["frontend", "drum-kit-feature", "P0"]
   assignee: ""
-  dependencies: ["BEAT-003", "BEAT-004"]
+  dependencies: ["PRD-0001-003", "PRD-0001-004"]
 ---
 
-### BEAT-005: Kit Loading Functionality
+### PRD-0001-005: Kit Loading Functionality
 
 **Description:**
 Implement logic to load and apply drum kit sounds to tracks.
@@ -191,7 +191,7 @@ Implement logic to load and apply drum kit sounds to tracks.
 
 ---
 ticket:
-  id: BEAT-006
+  id: PRD-0001-006
   title: Track Edit Button UI
   type: frontend
   priority: P1
@@ -199,10 +199,10 @@ ticket:
   sprint: 2
   labels: ["frontend", "ui", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-005"]
+  dependencies: ["PRD-0001-005"]
 ---
 
-### BEAT-006: Track Edit Button UI
+### PRD-0001-006: Track Edit Button UI
 
 **Description:**
 Add edit button to each track for opening sound browser.
@@ -216,7 +216,7 @@ Add edit button to each track for opening sound browser.
 
 ---
 ticket:
-  id: BEAT-007
+  id: PRD-0001-007
   title: Sound Browser Modal Component
   type: frontend
   priority: P1
@@ -224,10 +224,10 @@ ticket:
   sprint: 2
   labels: ["frontend", "ui", "modal", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-006"]
+  dependencies: ["PRD-0001-006"]
 ---
 
-### BEAT-007: Sound Browser Modal Component
+### PRD-0001-007: Sound Browser Modal Component
 
 **Description:**
 Create modal overlay interface for browsing and selecting sounds.
@@ -248,7 +248,7 @@ Create modal overlay interface for browsing and selecting sounds.
 
 ---
 ticket:
-  id: BEAT-008
+  id: PRD-0001-008
   title: Category Filter Tabs
   type: frontend
   priority: P1
@@ -256,10 +256,10 @@ ticket:
   sprint: 2
   labels: ["frontend", "ui", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-007"]
+  dependencies: ["PRD-0001-007"]
 ---
 
-### BEAT-008: Category Filter Tabs
+### PRD-0001-008: Category Filter Tabs
 
 **Description:**
 Implement category tabs for filtering sounds in browser.
@@ -273,7 +273,7 @@ Implement category tabs for filtering sounds in browser.
 
 ---
 ticket:
-  id: BEAT-009
+  id: PRD-0001-009
   title: Sound Grid Display
   type: frontend
   priority: P1
@@ -281,10 +281,10 @@ ticket:
   sprint: 2
   labels: ["frontend", "ui", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-008"]
+  dependencies: ["PRD-0001-008"]
 ---
 
-### BEAT-009: Sound Grid Display
+### PRD-0001-009: Sound Grid Display
 
 **Description:**
 Display filtered sounds in a grid layout within the modal.
@@ -298,7 +298,7 @@ Display filtered sounds in a grid layout within the modal.
 
 ---
 ticket:
-  id: BEAT-010
+  id: PRD-0001-010
   title: Sound Preview Functionality
   type: frontend
   priority: P1
@@ -306,10 +306,10 @@ ticket:
   sprint: 2
   labels: ["frontend", "audio", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-009"]
+  dependencies: ["PRD-0001-009"]
 ---
 
-### BEAT-010: Sound Preview Functionality
+### PRD-0001-010: Sound Preview Functionality
 
 **Description:**
 Implement ability to preview sounds before selection.
@@ -325,7 +325,7 @@ Implement ability to preview sounds before selection.
 
 ---
 ticket:
-  id: BEAT-011
+  id: PRD-0001-011
   title: Live Pattern Preview
   type: frontend
   priority: P1
@@ -333,10 +333,10 @@ ticket:
   sprint: 3
   labels: ["frontend", "audio", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-010"]
+  dependencies: ["PRD-0001-010"]
 ---
 
-### BEAT-011: Live Pattern Preview
+### PRD-0001-011: Live Pattern Preview
 
 **Description:**
 Allow live preview of sounds while pattern is playing.
@@ -355,7 +355,7 @@ Allow live preview of sounds while pattern is playing.
 
 ---
 ticket:
-  id: BEAT-012
+  id: PRD-0001-012
   title: Sound Selection & Assignment
   type: frontend
   priority: P1
@@ -363,10 +363,10 @@ ticket:
   sprint: 3
   labels: ["frontend", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-011"]
+  dependencies: ["PRD-0001-011"]
 ---
 
-### BEAT-012: Sound Selection & Assignment
+### PRD-0001-012: Sound Selection & Assignment
 
 **Description:**
 Implement selecting and assigning sounds to tracks.
@@ -380,7 +380,7 @@ Implement selecting and assigning sounds to tracks.
 
 ---
 ticket:
-  id: BEAT-013
+  id: PRD-0001-013
   title: Customization Indicators
   type: frontend
   priority: P2
@@ -388,10 +388,10 @@ ticket:
   sprint: 3
   labels: ["frontend", "ui", "drum-kit-feature", "P2"]
   assignee: ""
-  dependencies: ["BEAT-012"]
+  dependencies: ["PRD-0001-012"]
 ---
 
-### BEAT-013: Customization Indicators
+### PRD-0001-013: Customization Indicators
 
 **Description:**
 Add visual indicators for tracks with custom sounds.
@@ -404,7 +404,7 @@ Add visual indicators for tracks with custom sounds.
 
 ---
 ticket:
-  id: BEAT-014
+  id: PRD-0001-014
   title: LocalStorage Persistence
   type: frontend
   priority: P1
@@ -412,10 +412,10 @@ ticket:
   sprint: 3
   labels: ["frontend", "storage", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-012"]
+  dependencies: ["PRD-0001-012"]
 ---
 
-### BEAT-014: LocalStorage Persistence
+### PRD-0001-014: LocalStorage Persistence
 
 **Description:**
 Save and restore kit selection and customizations.
@@ -440,7 +440,7 @@ Save and restore kit selection and customizations.
 
 ---
 ticket:
-  id: BEAT-015
+  id: PRD-0001-015
   title: Keyboard Shortcuts
   type: frontend
   priority: P2
@@ -448,10 +448,10 @@ ticket:
   sprint: 3
   labels: ["frontend", "accessibility", "drum-kit-feature", "P2"]
   assignee: ""
-  dependencies: ["BEAT-012"]
+  dependencies: ["PRD-0001-012"]
 ---
 
-### BEAT-015: Keyboard Shortcuts
+### PRD-0001-015: Keyboard Shortcuts
 
 **Description:**
 Add keyboard shortcuts for power users.
@@ -467,7 +467,7 @@ Add keyboard shortcuts for power users.
 
 ---
 ticket:
-  id: BEAT-016
+  id: PRD-0001-016
   title: Performance Optimization
   type: performance
   priority: P1
@@ -475,10 +475,10 @@ ticket:
   sprint: 4
   labels: ["performance", "audio", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-011", "BEAT-012", "BEAT-014"]
+  dependencies: ["PRD-0001-011", "PRD-0001-012", "PRD-0001-014"]
 ---
 
-### BEAT-016: Performance Optimization
+### PRD-0001-016: Performance Optimization
 
 **Description:**
 Optimize sound loading and switching performance.
@@ -498,7 +498,7 @@ Optimize sound loading and switching performance.
 
 ---
 ticket:
-  id: BEAT-017
+  id: PRD-0001-017
   title: Mobile Optimization
   type: frontend
   priority: P1
@@ -506,10 +506,10 @@ ticket:
   sprint: 4
   labels: ["frontend", "mobile", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-016"]
+  dependencies: ["PRD-0001-016"]
 ---
 
-### BEAT-017: Mobile Optimization
+### PRD-0001-017: Mobile Optimization
 
 **Description:**
 Ensure optimal mobile experience for sound browser.
@@ -523,7 +523,7 @@ Ensure optimal mobile experience for sound browser.
 
 ---
 ticket:
-  id: BEAT-018
+  id: PRD-0001-018
   title: Search & Filter
   type: frontend
   priority: P2
@@ -531,10 +531,10 @@ ticket:
   sprint: 4
   labels: ["frontend", "ui", "drum-kit-feature", "P2"]
   assignee: ""
-  dependencies: ["BEAT-009"]
+  dependencies: ["PRD-0001-009"]
 ---
 
-### BEAT-018: Search & Filter
+### PRD-0001-018: Search & Filter
 
 **Description:**
 Add search functionality to sound browser.
@@ -548,7 +548,7 @@ Add search functionality to sound browser.
 
 ---
 ticket:
-  id: BEAT-019
+  id: PRD-0001-019
   title: Error Handling & Edge Cases
   type: frontend
   priority: P1
@@ -556,10 +556,10 @@ ticket:
   sprint: 4
   labels: ["frontend", "error-handling", "drum-kit-feature", "P1"]
   assignee: ""
-  dependencies: ["BEAT-016"]
+  dependencies: ["PRD-0001-016"]
 ---
 
-### BEAT-019: Error Handling & Edge Cases
+### PRD-0001-019: Error Handling & Edge Cases
 
 **Description:**
 Handle errors and edge cases gracefully.
@@ -573,7 +573,7 @@ Handle errors and edge cases gracefully.
 
 ---
 ticket:
-  id: BEAT-020
+  id: PRD-0001-020
   title: Cross-browser Testing
   type: qa
   priority: P0
@@ -581,10 +581,10 @@ ticket:
   sprint: 4
   labels: ["qa", "testing", "drum-kit-feature", "P0"]
   assignee: ""
-  dependencies: ["BEAT-016", "BEAT-017", "BEAT-019"]
+  dependencies: ["PRD-0001-016", "PRD-0001-017", "PRD-0001-019"]
 ---
 
-### BEAT-020: Cross-browser Testing
+### PRD-0001-020: Cross-browser Testing
 
 **Description:**
 Comprehensive testing across all target browsers.
