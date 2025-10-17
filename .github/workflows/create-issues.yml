@@ -32,7 +32,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        python scripts/create_github_issues.py \
+        python scripts/create-github-issues.py \
           "${{ github.event.inputs.file_path }}" \
           --repo "${{ github.repository }}" \
           ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
