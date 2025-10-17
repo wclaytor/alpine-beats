@@ -23,6 +23,8 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 
 ### 🎯 Product-Owner Role
 
+[Product-Owner](docs/roles/Product-Owner.md)
+
 **When to Use This Role**: Feature requests, user experience questions, workflow design, prioritization decisions
 
 **Focus**: User experience, feature prioritization, musical workflow
