@@ -83,6 +83,25 @@ Works in all modern browsers that support:
 - ES6 JavaScript
 - CSS Grid and Flexbox
 
+## Future Features
+
+We're constantly innovating! Check out our comprehensive feature brainstorming:
+
+- **[PRD-0002: Feature Brainstorming](docs/features/PRD-0002/PRD-0002.md)** - Complete 22-feature roadmap
+- **[Quick Summary](docs/features/PRD-0002/PRD-0002-SUMMARY.md)** - At-a-glance feature overview
+- **[Roadmap 2025](docs/features/PRD-0002/ROADMAP.md)** - 12-month development plan
+
+Upcoming features include:
+- 📚 Pattern Library & Management
+- 🎵 Real-Time Recording Mode
+- 📝 Song/Arrangement Mode
+- 🎛️ Audio Effects Chain
+- 💿 Audio Export (WAV/MP3)
+- 🎹 MIDI Support
+- 🌐 Pattern Sharing & Collaboration
+- 🎓 Educational Tutorials
+- And much more!
+
 ## License
 
 MIT
