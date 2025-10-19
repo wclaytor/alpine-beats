@@ -29,7 +29,8 @@ class GitHubIssueCreator:
         self.repo = repo
         self.dry_run = dry_run
         self.created_issues = {}  # Map ticket IDs to issue numbers
-        self._verify_gh_cli()
+        if not dry_run:
+            self._verify_gh_cli()
         
     def _verify_gh_cli(self):
         """Verify that gh CLI is installed and authenticated."""
