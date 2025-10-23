@@ -1,0 +1,16 @@
+{
+  "name": "Project with Template Access",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  
+  "customizations": {
+    "codespaces": {
+      "permissions": {
+        "repository": {
+          "wclaytor/project-template": {
+            "contents": "read"
+          }
+        }
+      }
+    }
+  }
+}
