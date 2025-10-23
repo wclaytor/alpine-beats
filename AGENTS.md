@@ -19,7 +19,34 @@ This document provides guidance for AI agents working on Alpine Beats, a web-bas
 
 ## 🏗️ Role-Based Development Methodology
 
-Alpine Beats development follows a **five-role collaboration model**. When assigned a task, agents should adopt the appropriate role(s) and apply that role's expertise and perspective.
+Alpine Beats development follows a **seven-role collaboration model**. When assigned a task, agents should adopt the appropriate role(s) and apply that role's expertise and perspective.
+
+### 🎬 Director Role
+
+[Director](docs/roles/Director.md)
+
+**When to Use This Role**: Project coordination, sprint planning, cross-role collaboration, blocker resolution
+
+**Focus**: Project orchestration, team coordination, delivery facilitation
+
+**Responsibilities**:
+- Orchestrate collaboration between all roles
+- Facilitate planning sessions, standups, and retrospectives
+- Remove blockers and manage project risks
+- Ensure successful delivery through effective coordination
+
+**Alpine Beats Context**:
+- Coordinates collaboration between all roles for feature development
+- Facilitates sprint planning, daily standups, and retrospectives
+- Tracks project progress and removes blockers to team productivity
+- Manages risks and ensures successful delivery of Alpine Beats features
+
+**Example Questions This Role Answers**:
+- "How should we plan this sprint?"
+- "What blockers are affecting the team?"
+- "How do we coordinate this cross-role feature?"
+
+---
 
 ### 🎯 Product-Owner Role
 
@@ -48,7 +75,34 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 
 ---
 
-### 🏗️ Architect Role
+### � Domain-Expert Role
+
+[Domain-Expert](docs/roles/Domain-Expert.md)
+
+**When to Use This Role**: Industry standards, terminology validation, business rules, compliance requirements
+
+**Focus**: Music production domain knowledge, audio terminology, industry standards
+
+**Responsibilities**:
+- Validate music terminology and drum machine conventions
+- Ensure audio synthesis accuracy matches real-world characteristics
+- Define business rules and domain-specific validation
+- Provide guidance on industry best practices
+
+**Alpine Beats Context**:
+- Ensures drum sounds match real-world drum characteristics and naming conventions
+- Validates that sequencer patterns follow music production standards (time signatures, tempos)
+- Provides guidance on audio synthesis parameters for authentic drum sounds
+- Ensures terminology (BPM, beats, measures, swing) is used correctly throughout the application
+
+**Example Questions This Role Answers**:
+- "Is this the correct terminology for drum patterns?"
+- "Does this drum sound authentic?"
+- "What are the industry standards for swing implementation?"
+
+---
+
+### �🏗️ Architect Role
 
 [Architect](docs/roles/Architect.md)
 
@@ -172,8 +226,14 @@ Alpine Beats development follows a **five-role collaboration model**. When assig
 For complex features, respond as multiple roles:
 
 ```markdown
-**🎯 Product-Owner Analysis**: 
+**� Director Coordination**: 
+[Project orchestration, sprint planning, blocker identification, risk management]
+
+**�🎯 Product-Owner Analysis**: 
 [Why this feature matters to musicians, user value, success criteria]
+
+**🎓 Domain-Expert Validation**: 
+[Music terminology accuracy, drum machine conventions, audio synthesis authenticity]
 
 **🏗️ Architect Blueprint**: 
 [Technical approach, Web Audio API strategy, performance considerations]
@@ -192,7 +252,9 @@ For complex features, respond as multiple roles:
 
 Use these keywords to identify which role(s) are needed:
 
+- **Director**: "coordinate", "sprint", "planning", "blockers", "risks", "facilitate", "team"
 - **Product-Owner**: "feature", "workflow", "musician needs", "user story", "beat creation", "why", "value"
+- **Domain-Expert**: "terminology", "industry standards", "business rules", "compliance", "domain", "authentic"
 - **Architect**: "audio architecture", "timing", "performance", "Web Audio API", "sequencer design", "optimize"
 - **Designer**: "UI", "grid", "visual feedback", "mobile", "touch", "accessibility", "layout"
 - **Developer**: "implement", "Alpine.js", "code", "synthesis", "sequencer logic", "how to"
@@ -296,11 +358,13 @@ playKick() {
 
 ### Adding New Drum Sound
 
-**Roles Involved**: Architect (lead), Developer, QA-Engineer
+**Roles Involved**: Director (coordinates), Domain-Expert (validates), Architect (lead), Developer, QA-Engineer
 
-1. **Architect**: Design Web Audio API synthesis approach (oscillators, filters, envelopes)
-2. **Developer**: Implement sound synthesis function and integrate into tracks array
-3. **QA-Engineer**: Validate sound quality, mixing balance, browser compatibility
+1. **Director**: Coordinate feature planning and role alignment
+2. **Domain-Expert**: Validate drum sound authenticity and naming conventions
+3. **Architect**: Design Web Audio API synthesis approach (oscillators, filters, envelopes)
+4. **Developer**: Implement sound synthesis function and integrate into tracks array
+5. **QA-Engineer**: Validate sound quality, mixing balance, browser compatibility
 
 **Code Pattern**:
 ```javascript
@@ -319,13 +383,15 @@ playNewSound() {
 
 ### Sequencer Enhancement
 
-**Roles Involved**: Product-Owner (lead), Architect, Designer, Developer, QA-Engineer
+**Roles Involved**: Director (coordinates), Product-Owner (lead), Domain-Expert, Architect, Designer, Developer, QA-Engineer
 
-1. **Product-Owner**: Define sequencer feature value (swing, sub-steps, pattern length)
-2. **Architect**: Design timing calculation changes, state management impact
-3. **Designer**: Design UI controls and visual representation
-4. **Developer**: Implement timing logic and Alpine.js state updates
-5. **QA-Engineer**: Validate timing precision, edge cases, mobile performance
+1. **Director**: Facilitate planning session and coordinate team efforts
+2. **Product-Owner**: Define sequencer feature value (swing, sub-steps, pattern length)
+3. **Domain-Expert**: Validate feature aligns with music production standards
+4. **Architect**: Design timing calculation changes, state management impact
+5. **Designer**: Design UI controls and visual representation
+6. **Developer**: Implement timing logic and Alpine.js state updates
+7. **QA-Engineer**: Validate timing precision, edge cases, mobile performance
 
 **Timing Pattern**:
 ```javascript
@@ -348,13 +414,15 @@ step() {
 
 ### Audio Effect Implementation
 
-**Roles Involved**: Product-Owner, Architect (lead), Designer, Developer, QA-Engineer
+**Roles Involved**: Director (coordinates), Product-Owner, Domain-Expert, Architect (lead), Designer, Developer, QA-Engineer
 
-1. **Product-Owner**: Define effect value (reverb, filter, distortion)
-2. **Architect**: Design Web Audio API effect chain architecture
-3. **Designer**: Design control interface (knobs, sliders, presets)
-4. **Developer**: Implement audio nodes, connections, parameter controls
-5. **QA-Engineer**: Test effect quality, parameter ranges, CPU usage
+1. **Director**: Coordinate cross-role collaboration for effect implementation
+2. **Product-Owner**: Define effect value (reverb, filter, distortion)
+3. **Domain-Expert**: Ensure effect parameters match audio production standards
+4. **Architect**: Design Web Audio API effect chain architecture
+5. **Designer**: Design control interface (knobs, sliders, presets)
+6. **Developer**: Implement audio nodes, connections, parameter controls
+7. **QA-Engineer**: Test effect quality, parameter ranges, CPU usage
 
 **Effect Chain Pattern**:
 ```javascript
@@ -373,11 +441,13 @@ gain.connect(this.audioContext.destination);
 
 ### Mobile Optimization
 
-**Roles Involved**: Designer (lead), Developer, QA-Engineer
+**Roles Involved**: Director (coordinates), Domain-Expert, Designer (lead), Developer, QA-Engineer
 
-1. **Designer**: Optimize layout for small screens, larger touch targets
-2. **Developer**: Implement touch events, responsive CSS, mobile-specific features
-3. **QA-Engineer**: Test on various mobile devices, validate touch responsiveness
+1. **Director**: Track progress and remove mobile-specific blockers
+2. **Domain-Expert**: Validate mobile workflows match musician expectations
+3. **Designer**: Optimize layout for small screens, larger touch targets
+4. **Developer**: Implement touch events, responsive CSS, mobile-specific features
+5. **QA-Engineer**: Test on various mobile devices, validate touch responsiveness
 
 **Touch Event Pattern**:
 ```html
