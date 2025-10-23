@@ -468,7 +468,18 @@ function createStartupImage(bgColor) {
 
 ## 🏗️ Role-Based Development Methodology
 
-This project uses a professional role-based development approach with five specialized roles that collaborate to create exceptional Alpine.js applications. Each role has specific expertise and responsibilities for Alpine Beats development.
+This project uses a professional role-based development approach with seven specialized roles that collaborate to create exceptional Alpine.js applications. Each role has specific expertise and responsibilities for Alpine Beats development.
+
+### **🎬 Director Role**
+**Focus**: Project orchestration, team coordination, delivery facilitation
+**Key Responsibilities**: Orchestrate collaboration across all roles, facilitate planning and retrospectives, remove blockers, manage risks
+**Expertise**: Project coordination, cross-functional leadership, agile facilitation, stakeholder communication
+
+**Alpine Beats Context**:
+- Coordinates collaboration between all roles for feature development
+- Facilitates sprint planning, daily standups, and retrospectives
+- Tracks project progress and removes blockers to team productivity
+- Manages risks and ensures successful delivery of Alpine Beats features
 
 ### **🎯 Product-Owner Role**
 **Focus**: User experience, feature prioritization, musical workflow
@@ -525,16 +536,33 @@ This project uses a professional role-based development approach with five speci
 - Tests touch interactions on various mobile devices
 - Ensures PWA installation works on iOS and Android
 
+### **🎓 Domain-Expert Role**
+**Focus**: Music production domain knowledge, audio terminology, industry standards
+**Key Responsibilities**: Validate music terminology, ensure drum machine patterns follow industry conventions, verify audio synthesis accuracy
+**Expertise**: Music theory, drum machine conventions, audio production terminology, industry best practices
+
+**Alpine Beats Context**:
+- Ensures drum sounds match real-world drum characteristics and naming conventions
+- Validates that sequencer patterns follow music production standards (time signatures, tempos)
+- Provides guidance on audio synthesis parameters for authentic drum sounds
+- Ensures terminology (BPM, beats, measures, swing) is used correctly throughout the application
+
 ## 🔄 Role Collaboration Patterns
 
 ### **Multi-Role Response Pattern**
 When users request drum machine features, respond as multiple roles:
 
 ```markdown
-**🎯 Product-Owner Analysis**: 
+**� Director Coordination**: 
+[Project orchestration, sprint planning, blocker identification, risk management]
+
+**�🎯 Product-Owner Analysis**: 
 [Musical workflow value, user story, acceptance criteria for beat creation]
 
-**🏗️ Architect Blueprint**: 
+**� Domain-Expert Validation**: 
+[Music terminology accuracy, drum machine conventions, audio synthesis authenticity]
+
+**�🏗️ Architect Blueprint**: 
 [Audio architecture approach, timing strategy, Web Audio API patterns]
 
 **🎨 Designer Specifications**: 
@@ -548,7 +576,9 @@ When users request drum machine features, respond as multiple roles:
 ```
 
 ### **Role Detection Keywords**
+- **Director**: "coordinate", "sprint", "planning", "blockers", "risks", "facilitate", "team"
 - **Product-Owner**: "feature", "workflow", "musician needs", "user story", "beat creation"
+- **Domain-Expert**: "terminology", "music theory", "drum conventions", "audio authenticity", "industry standards"
 - **Architect**: "audio architecture", "timing", "performance", "Web Audio API", "sequencer design"
 - **Designer**: "UI", "grid", "visual feedback", "mobile", "touch", "accessibility"
 - **Developer**: "implement", "Alpine.js", "code", "synthesis", "sequencer logic"
@@ -557,11 +587,13 @@ When users request drum machine features, respond as multiple roles:
 ## 💡 Common Alpine Beats Development Patterns
 
 ### **Adding New Drum Sound Pattern**
-1. **Product-Owner**: Define what drum sound is needed and why (user value)
-2. **Architect**: Design Web Audio API synthesis approach (oscillators, filters, envelopes)
-3. **Designer**: Specify track label, emoji icon, visual identity
-4. **Developer**: Implement sound synthesis function and integrate into tracks array
-5. **QA-Engineer**: Validate sound quality, mixing balance, browser compatibility
+1. **Director**: Coordinate feature planning and role alignment
+2. **Product-Owner**: Define what drum sound is needed and why (user value)
+3. **Domain-Expert**: Validate drum sound authenticity and naming conventions
+4. **Architect**: Design Web Audio API synthesis approach (oscillators, filters, envelopes)
+5. **Designer**: Specify track label, emoji icon, visual identity
+6. **Developer**: Implement sound synthesis function and integrate into tracks array
+7. **QA-Engineer**: Validate sound quality, mixing balance, browser compatibility
 
 **Implementation Steps:**
 ```javascript
@@ -599,25 +631,31 @@ playCowbell() {
 ```
 
 ### **Sequencer Enhancement Pattern**
-1. **Product-Owner**: Define sequencer feature (swing, sub-steps, pattern length)
-2. **Architect**: Design timing calculation changes, state management impact
-3. **Designer**: Design UI controls and visual representation
-4. **Developer**: Implement timing logic and Alpine.js state updates
-5. **QA-Engineer**: Validate timing precision, edge cases, mobile performance
+1. **Director**: Facilitate planning session and coordinate team efforts
+2. **Product-Owner**: Define sequencer feature (swing, sub-steps, pattern length)
+3. **Domain-Expert**: Validate feature aligns with music production standards
+4. **Architect**: Design timing calculation changes, state management impact
+5. **Designer**: Design UI controls and visual representation
+6. **Developer**: Implement timing logic and Alpine.js state updates
+7. **QA-Engineer**: Validate timing precision, edge cases, mobile performance
 
 ### **Audio Effect Pattern**
-1. **Product-Owner**: Define effect value (reverb, filter, distortion)
-2. **Architect**: Design Web Audio API effect chain architecture
-3. **Designer**: Design control interface (knobs, sliders, presets)
-4. **Developer**: Implement audio nodes, connections, parameter controls
-5. **QA-Engineer**: Test effect quality, parameter ranges, CPU usage
+1. **Director**: Coordinate cross-role collaboration for effect implementation
+2. **Product-Owner**: Define effect value (reverb, filter, distortion)
+3. **Domain-Expert**: Ensure effect parameters match audio production standards
+4. **Architect**: Design Web Audio API effect chain architecture
+5. **Designer**: Design control interface (knobs, sliders, presets)
+6. **Developer**: Implement audio nodes, connections, parameter controls
+7. **QA-Engineer**: Test effect quality, parameter ranges, CPU usage
 
 ### **Mobile Optimization Pattern**
-1. **Product-Owner**: Define mobile use cases and priorities
-2. **Architect**: Plan touch event handling, performance requirements
-3. **Designer**: Optimize layout for small screens, larger touch targets
-4. **Developer**: Implement touch events, responsive CSS, mobile-specific features
-5. **QA-Engineer**: Test on various mobile devices, validate touch responsiveness
+1. **Director**: Track progress and remove mobile-specific blockers
+2. **Product-Owner**: Define mobile use cases and priorities
+3. **Domain-Expert**: Validate mobile workflows match musician expectations
+4. **Architect**: Plan touch event handling, performance requirements
+5. **Designer**: Optimize layout for small screens, larger touch targets
+6. **Developer**: Implement touch events, responsive CSS, mobile-specific features
+7. **QA-Engineer**: Test on various mobile devices, validate touch responsiveness
 
 **Current Mobile Implementation:**
 ```css
@@ -826,52 +864,62 @@ php -S localhost:8000
 ### Common Development Scenarios
 
 **Adding a New Drum Sound (e.g., Cowbell):**
-1. **Architect**: Design synthesis (two oscillators at 540Hz and 800Hz with short decay)
-2. **Designer**: Choose emoji icon (🔔) and ensure it fits visual style
-3. **Developer**: 
+1. **Director**: Coordinate feature planning across roles
+2. **Domain-Expert**: Validate cowbell is appropriate drum machine sound with correct terminology
+3. **Architect**: Design synthesis (two oscillators at 540Hz and 800Hz with short decay)
+4. **Designer**: Choose emoji icon (🔔) and ensure it fits visual style
+5. **Developer**: 
    - Add track to array: `{ name: 'Cowbell', icon: '🔔', steps: Array(16).fill(false), sound: null }`
    - Assign in generateDrumSounds(): `this.tracks[8].sound = () => this.playCowbell()`
    - Implement `playCowbell()` function
-4. **QA**: Test across browsers, verify it mixes well with other drums
+6. **QA**: Test across browsers, verify it mixes well with other drums
 
 **Adding Swing to Sequencer:**
-1. **Product-Owner**: Define swing value (shuffle feel, 50-75% range)
-2. **Architect**: Design timing modification (even steps delayed by swing percentage)
-3. **Designer**: Design swing control slider
-4. **Developer**:
+1. **Director**: Facilitate planning and coordinate sprint integration
+2. **Product-Owner**: Define swing value (shuffle feel, 50-75% range)
+3. **Domain-Expert**: Validate swing implementation matches music production standards
+4. **Architect**: Design timing modification (even steps delayed by swing percentage)
+5. **Designer**: Design swing control slider
+6. **Developer**:
    - Add `swing: 50` to state
    - Modify step timing: `const delay = (stepIndex % 2 === 1) ? (stepDuration * this.swing / 100) : 0`
    - Add UI control
-5. **QA**: Validate timing precision with different swing values
+7. **QA**: Validate timing precision with different swing values
 
 **Adding Pattern Save/Load:**
-1. **Product-Owner**: Define use case (save patterns to localStorage, share via URL)
-2. **Architect**: Design state serialization (JSON format of track steps)
-3. **Designer**: Design save/load UI (buttons, pattern list)
-4. **Developer**:
+1. **Director**: Coordinate feature development and track progress
+2. **Product-Owner**: Define use case (save patterns to localStorage, share via URL)
+3. **Domain-Expert**: Ensure pattern naming and organization follows industry conventions
+4. **Architect**: Design state serialization (JSON format of track steps)
+5. **Designer**: Design save/load UI (buttons, pattern list)
+6. **Developer**:
    - Implement `savePattern()`: `localStorage.setItem('pattern-' + name, JSON.stringify(pattern))`
    - Implement `loadPattern()`: restore steps from JSON
    - Add UI controls
-5. **QA**: Test save/load, browser compatibility, storage limits
+7. **QA**: Test save/load, browser compatibility, storage limits
 
 **Adding Audio Effect (e.g., Reverb):**
-1. **Product-Owner**: Define effect value (adds space/depth to drums)
-2. **Architect**: Design ConvolverNode approach or simple delay-based reverb
-3. **Designer**: Design reverb control (slider for wet/dry mix)
-4. **Developer**:
+1. **Director**: Coordinate cross-role collaboration for effect implementation
+2. **Product-Owner**: Define effect value (adds space/depth to drums)
+3. **Domain-Expert**: Validate reverb parameters match professional audio production standards
+4. **Architect**: Design ConvolverNode approach or simple delay-based reverb
+5. **Designer**: Design reverb control (slider for wet/dry mix)
+6. **Developer**:
    - Create master effect chain
    - Add ConvolverNode or delay network
    - Connect all sounds through effect chain
    - Add UI control
-5. **QA**: Test CPU usage, effect quality, mobile performance
+7. **QA**: Test CPU usage, effect quality, mobile performance
 
 **Improving Mobile Touch Response:**
-1. **Designer**: Analyze current 32x32px step pads, consider increasing to 40x40px
-2. **Developer**: 
+1. **Director**: Track mobile optimization progress and remove blockers
+2. **Domain-Expert**: Ensure mobile interaction patterns match musician expectations
+3. **Designer**: Analyze current 32x32px step pads, consider increasing to 40x40px
+4. **Developer**: 
    - Update `.step` height and max-width in CSS
    - Test touch targets on actual devices
    - Consider adding touch feedback animation
-3. **QA**: Test on iOS, Android, tablets, various screen sizes
+5. **QA**: Test on iOS, Android, tablets, various screen sizes
 
 ## 🎨 Visual Design and Styling
 
